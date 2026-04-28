@@ -136,3 +136,21 @@ function descargarCV() {
             URL.revokeObjectURL(url);
         });
 }
+//abrir el menu en movil 
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const links = menu.querySelectorAll("a");
+
+    // Abrir / cerrar menú
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+    // Cerrar menú al hacer clic en un link
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.add("hidden");
+        });
+    });
+});
